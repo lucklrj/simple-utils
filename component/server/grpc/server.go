@@ -13,7 +13,9 @@ func New() *grpc.Server {
 func Run(address string, port uint, server *grpc.Server) error {
 
 	addressListen, err := net.Listen("tcp", address+":"+cast.ToString(port))
-	return err
+	if err != nil {
+		return err
+	}
 	if err := server.Serve(addressListen); err != nil {
 		return err
 	}
