@@ -27,7 +27,7 @@ type Pool struct {
 	Pools         chan *Worker
 }
 
-func (p *Pool) Create() {
+func (p *Pool) create() {
 	defer func() { p.WorkNum++ }()
 
 	handler := p.CreateWorker()
@@ -57,7 +57,7 @@ func (p *Pool) Init() error {
 func (p *Pool) Get() (*Worker, error) {
 	//线程池=0，但未达到max，直接创建
 	if len(p.Pools) == 0 && p.WorkNum < p.MaxOpenWorkers {
-		p.Create()
+		p.create()
 	}
 	for {
 		select {
