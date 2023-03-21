@@ -24,9 +24,10 @@ type Pool struct {
 
 	CreateWorker  func() interface{}
 	DestroyWorker func(interface{})
-	Pools         chan *Worker
+	IdleWorkers   chan *Worker
 }
 
+//idle
 func (p *Pool) create() {
 	defer func() { p.WorkNum++ }()
 
@@ -41,14 +42,14 @@ func (p *Pool) create() {
 	Worker.LeftTime = leftTime
 	Worker.Name = strings.GetRand(6)
 	p.mu.RLock()
-	p.Pools <- Worker
+	p.IdleWorkers <- Worker
 	p.mu.RUnlock()
 }
 
 func (p *Pool) Init() error {
 	p.WorkNum = 0
 	if p.MaxOpenWorkers > 0 {
-		p.Pools = make(chan *Worker, p.MaxOpenWorkers)
+		p.IdleWorkers = make(chan *Worker, p.MaxOpenWorkers)
 		return nil
 	} else {
 		return errors.New("parameter:MaxOpenWorkers must be greater than zero.")
@@ -56,18 +57,20 @@ func (p *Pool) Init() error {
 }
 func (p *Pool) Get() (*Worker, error) {
 	//线程池=0，但未达到max，直接创建
-	if len(p.Pools) == 0 && p.WorkNum < p.MaxOpenWorkers {
+	//if len(p.IdleWorkers) == 0 && p.WorkNum < p.MaxOpenWorkers {
+	//当死亡worker未剔除时，此时IdleWorkers不为空
+	if p.WorkNum < p.MaxOpenWorkers {
 		p.create()
 	}
 	for {
 		select {
 		//case <-time.After(time.Duration(p.WorkerTimeOut / 1000)):
-		//	if len(p.Pools) < p.MaxOpenWorkers {
+		//	if len(p.IdleWorkers) < p.MaxOpenWorkers {
 		//		p.Create()
 		//	}
 		case <-time.After(time.Duration(p.WorkerTimeOut) * time.Second):
 			return nil, errors.New("get Workerection time out")
-		case Worker := <-p.Pools:
+		case Worker := <-p.IdleWorkers:
 			if Worker.LeftTime > 0 && Worker.LeftTime < int64(dateHelper.GetNowUnixTimeStamp()) {
 				p.DestroyWorker((*Worker).Handler)
 				p.WorkNum--
@@ -79,23 +82,23 @@ func (p *Pool) Get() (*Worker, error) {
 	}
 }
 func (p *Pool) Put(c *Worker) {
-	if len(p.Pools) > p.MaxOpenWorkers {
+	if len(p.IdleWorkers) > p.MaxOpenWorkers {
 		p.DestroyWorker((*c).Handler)
 	} else {
 		p.mu.RLock()
-		p.Pools <- c
+		p.IdleWorkers <- c
 		p.mu.RUnlock()
 	}
 }
 func (p *Pool) Close() {
 	p.mu.Lock()
-	pools := p.Pools
-	p.Pools = nil
+	idleWorkers := p.IdleWorkers
+	p.IdleWorkers = nil
 	p.mu.Unlock()
 
-	if pools != nil {
-		close(pools)
-		for Worker := range pools {
+	if idleWorkers != nil {
+		close(idleWorkers)
+		for Worker := range idleWorkers {
 			p.DestroyWorker((*Worker).Handler)
 		}
 	}
