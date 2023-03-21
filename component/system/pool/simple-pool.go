@@ -23,7 +23,7 @@ type Pool struct {
 	mu                sync.RWMutex
 
 	CreateWorker  func() interface{}
-	DestroyWorker func(worker Worker)
+	DestroyWorker func(interface{})
 	Pools         chan *Worker
 }
 
@@ -69,7 +69,7 @@ func (p *Pool) Get() (*Worker, error) {
 			return nil, errors.New("get Workerection time out")
 		case Worker := <-p.Pools:
 			if Worker.LeftTime > 0 && Worker.LeftTime < int64(dateHelper.GetNowUnixTimeStamp()) {
-				p.DestroyWorker(*Worker)
+				p.DestroyWorker((*Worker).Handler)
 				p.WorkNum--
 				continue
 			} else {
@@ -80,7 +80,7 @@ func (p *Pool) Get() (*Worker, error) {
 }
 func (p *Pool) Put(c *Worker) {
 	if len(p.Pools) > p.MaxOpenWorkers {
-		p.DestroyWorker(*c)
+		p.DestroyWorker((*c).Handler)
 	} else {
 		p.mu.RLock()
 		p.Pools <- c
@@ -96,7 +96,7 @@ func (p *Pool) Close() {
 	if pools != nil {
 		close(pools)
 		for Worker := range pools {
-			p.DestroyWorker(*Worker)
+			p.DestroyWorker((*Worker).Handler)
 		}
 	}
 }
