@@ -9,7 +9,9 @@ import (
 func Run(address string, port uint, callbackFunc func(conn net.Conn)) error {
 
 	ln, err := net.Listen("tcp", address+":"+cast.ToString(port))
-	return err
+	if err != nil {
+		return err
+	}
 
 	for {
 		conn, err := ln.Accept()
