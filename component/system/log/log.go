@@ -19,7 +19,7 @@ func Run(logPath string) error {
 	logPath = filepath.Dir(binPath) + "/" + logPath
 
 	writer, err := rotatelogs.New(
-		logPath+"-%Y-%m-%d",
+		logPath+"/%Y-%m-%d.log",
 		rotatelogs.WithRotationTime(1),
 	)
 	if err != nil {
