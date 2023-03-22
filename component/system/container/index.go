@@ -41,12 +41,15 @@ func (c *Container) Check(key string) bool {
 	}
 }
 func (c *Container) Get(key string, defaultValue interface{}) interface{} {
-	obj, _ := c.data.Get(key)
+	obj, isExists := c.data.Get(key)
+	if isExists == false {
+		return defaultValue
+	}
 	value := obj.(singleData)
 	if value.ExpireTime > 0 && value.ExpireTime < dateHelper.GetNowUnixTimeStamp() {
 		return defaultValue
 	} else {
-		return obj.(singleData).Data
+		return value.Data
 	}
 
 }
