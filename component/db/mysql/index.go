@@ -27,7 +27,7 @@ type Mysql struct {
 	ConnMaxLifetimeSecond int
 }
 
-func (m Mysql) Run() error {
+func (m *Mysql) Run() error {
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
