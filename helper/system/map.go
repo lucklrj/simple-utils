@@ -48,7 +48,7 @@ func FetchByKey(data interface{}, key interface{}, defaultValue interface{}) int
 			}
 		case "string":
 			if _key.String() == cast.ToString(key) {
-				return values.MapIndex(_key)
+				return values.MapIndex(_key).Interface()
 			}
 		case "float":
 			if _key.Float() == cast.ToFloat64(key) {
