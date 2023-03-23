@@ -40,11 +40,11 @@ func FetchByKey(data interface{}, key interface{}, defaultValue interface{}) int
 		switch dataKeyType {
 		case "uint":
 			if _key.Uint() == cast.ToUint64(key) {
-				return values.MapIndex(_key)
+				return values.MapIndex(_key).Interface()
 			}
 		case "int":
 			if _key.Int() == cast.ToInt64(key) {
-				return values.MapIndex(_key)
+				return values.MapIndex(_key).Interface()
 			}
 		case "string":
 			if _key.String() == cast.ToString(key) {
@@ -52,11 +52,11 @@ func FetchByKey(data interface{}, key interface{}, defaultValue interface{}) int
 			}
 		case "float":
 			if _key.Float() == cast.ToFloat64(key) {
-				return values.MapIndex(_key)
+				return values.MapIndex(_key).Interface()
 			}
 		case "bool":
 			if _key.Bool() == cast.ToBool(key) {
-				return values.MapIndex(_key)
+				return values.MapIndex(_key).Interface()
 			}
 		}
 
