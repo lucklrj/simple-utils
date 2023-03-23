@@ -2,6 +2,10 @@ package system
 
 import (
 	"encoding/json"
+	"reflect"
+	"regexp"
+
+	"github.com/spf13/cast"
 )
 
 func Map2Struct(mapData map[string]interface{}, obj interface{}) error {
@@ -18,12 +22,45 @@ func Map2Struct(mapData map[string]interface{}, obj interface{}) error {
 	return nil
 }
 
-func GetMapKey[T int | string](data map[T]interface{}) []interface{} {
-	keys := make([]interface{}, len(data))
-	index := 0
-	for key := range data {
-		keys[index] = key
-		index += 1
+// FetchByKey 从map中获取key的值，如果key不存在，则获取默认值
+func FetchByKey(data interface{}, key interface{}, defaultValue interface{}) interface{} {
+	dateType := reflect.TypeOf(data).String()
+	if dateType[0:3] != "map" {
+		return defaultValue
 	}
-	return keys
+	reg := regexp.MustCompile("map\\[([a-z]*?)[0-9]*\\].*")
+	dataKeyType := reg.ReplaceAllString(dateType, "$1")
+	if dataKeyType != reflect.TypeOf(key).String() {
+		return defaultValue
+	}
+
+	values := reflect.ValueOf(data)
+	keys := values.MapKeys()
+	for _, _key := range keys {
+		switch dataKeyType {
+		case "uint":
+			if _key.Uint() == cast.ToUint64(key) {
+				return values.MapIndex(_key)
+			}
+		case "int":
+			if _key.Int() == cast.ToInt64(key) {
+				return values.MapIndex(_key)
+			}
+		case "string":
+			if _key.String() == cast.ToString(key) {
+				return values.MapIndex(_key)
+			}
+		case "float":
+			if _key.Float() == cast.ToFloat64(key) {
+				return values.MapIndex(_key)
+			}
+		case "bool":
+			if _key.Bool() == cast.ToBool(key) {
+				return values.MapIndex(_key)
+			}
+		}
+
+	}
+
+	return defaultValue
 }
