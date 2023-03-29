@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 
 	"github.com/lestrrat-go/file-rotatelogs"
+	systemHelper "github.com/lucklrj/simple-utils/helper/system"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -17,7 +18,12 @@ func Run(logPath string) error {
 	}
 
 	logPath = filepath.Dir(binPath) + "/" + logPath
-
+	if systemHelper.IsDirExist(logPath) == false {
+		err := systemHelper.MakeDirs(logPath)
+		if err != nil {
+			return err
+		}
+	}
 	writer, err := rotatelogs.New(
 		logPath+"/%Y-%m-%d.log",
 		rotatelogs.WithRotationTime(1),
