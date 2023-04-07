@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func run(url string, port uint) (*poolUtils.Pool, error) {
+func Create(url string, port uint) (*poolUtils.Pool, error) {
 	pool := new(poolUtils.Pool)
 	//defer pool.Close()
 
