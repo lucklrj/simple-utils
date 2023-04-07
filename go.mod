@@ -3,7 +3,7 @@ module github.com/lucklrj/simple-utils
 go 1.18
 
 require (
-	github.com/fatih/color v1.15.0
+	github.com/beanstalkd/go-beanstalk v0.2.0
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/glebarez/sqlite v1.7.0
 	github.com/golang-module/carbon v1.7.3
@@ -35,7 +35,6 @@ require (
 	github.com/jonboulle/clockwork v0.3.0 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/magiconair/properties v1.8.0 // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/mitchellh/mapstructure v1.1.2 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
