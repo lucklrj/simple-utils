@@ -14,6 +14,8 @@ import (
 func Push(pool *poolUtils.Pool, businessID, eventName string, eventData map[string]interface{},
 	messagePb proto.Message) error {
 
+	eventData["BusinessId"] = businessID
+
 	err := mapstructure.Decode(eventData, messagePb)
 	if err != nil {
 		return err
