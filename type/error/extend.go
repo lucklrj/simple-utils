@@ -5,14 +5,14 @@ type Error struct {
 	msg  string
 }
 
-func (e Error) Error() string {
+func (e *Error) Error() string {
 	return e.msg
 }
-func (e Error) Code() int {
+func (e *Error) Code() int {
 	return e.code
 }
 
-func New(code int, msg string) error {
+func New(code int, msg string) Error {
 	return Error{
 		code: code,
 		msg:  msg,
