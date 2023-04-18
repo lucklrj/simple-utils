@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func Run(url string, port uint) (*poolUtils.Pool, error) {
+func Run(url string, port uint, workerNamePrefix string) (*poolUtils.Pool, error) {
 	pool := new(poolUtils.Pool)
 	//defer pool.Close()
 
@@ -16,9 +16,11 @@ func Run(url string, port uint) (*poolUtils.Pool, error) {
 	pool.MaxOpenWorkers = 20
 	pool.WorkerMaxLifeTime = 600
 	pool.WorkerTimeOut = 10
+	pool.WorkerNamePrefix = workerNamePrefix
+	pool.Url = url
 
 	pool.CreateWorker = func() interface{} {
-		conn, err := beanstalk.Dial("tcp", url+":"+cast.ToString(port))
+		conn, err := beanstalk.Dial("tcp", pool.Url+":"+cast.ToString(port))
 		if err != nil {
 			//todo 处理：创建链接时出错
 			return nil

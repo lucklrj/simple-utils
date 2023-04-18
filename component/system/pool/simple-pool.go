@@ -21,10 +21,12 @@ type Pool struct {
 	WorkerTimeOut     int
 	WorkNum           int
 	mu                sync.RWMutex
+	Url               string
 
-	CreateWorker  func() interface{}
-	DestroyWorker func(interface{})
-	IdleWorkers   chan *Worker
+	CreateWorker     func() interface{}
+	DestroyWorker    func(interface{})
+	IdleWorkers      chan *Worker
+	WorkerNamePrefix string
 }
 
 //idle
@@ -40,7 +42,7 @@ func (p *Pool) create() {
 	Worker := new(Worker)
 	Worker.Handler = handler
 	Worker.LeftTime = leftTime
-	Worker.Name = strings.GetRand(6)
+	Worker.Name = p.WorkerNamePrefix + "_" + strings.GetRand(6)
 	p.mu.RLock()
 	p.IdleWorkers <- Worker
 	p.mu.RUnlock()
