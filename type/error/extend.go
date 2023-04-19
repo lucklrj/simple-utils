@@ -12,8 +12,8 @@ func (e *Error) Code() int {
 	return e.code
 }
 
-func New(code int, msg string) Error {
-	return Error{
+func New(code int, msg string) *Error {
+	return &Error{
 		code: code,
 		msg:  msg,
 	}
