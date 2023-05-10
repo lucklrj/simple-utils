@@ -79,5 +79,5 @@ func ChangeKey(data interface{}, changeFunc func(string) string) (interface{}, e
 		value := values.MapIndex(key)
 		newInstance.SetMapIndex(reflect.ValueOf(changeFunc(key.String())), value)
 	}
-	return newInstance, nil
+	return newInstance.Interface(), nil
 }
