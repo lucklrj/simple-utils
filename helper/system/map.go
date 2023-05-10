@@ -2,6 +2,7 @@ package system
 
 import (
 	"encoding/json"
+	"errors"
 	"reflect"
 	"regexp"
 
@@ -63,4 +64,20 @@ func FetchByKey(data interface{}, key interface{}, defaultValue interface{}) int
 	}
 
 	return defaultValue
+}
+
+func ChangeKey(data interface{}, changeFunc func(string) string) (interface{}, error) {
+	values := reflect.ValueOf(data)
+	if values.Kind() != reflect.Map {
+		return nil, errors.New("只支持map[string]interface{}的转换")
+	}
+
+	newInstance := reflect.MakeMap(values.Type())
+	keys := values.MapKeys()
+	for _, k := range keys {
+		key := k.Convert(newInstance.Type().Key())
+		value := values.MapIndex(key)
+		newInstance.SetMapIndex(reflect.ValueOf(changeFunc(key.String())), value)
+	}
+	return newInstance, nil
 }
