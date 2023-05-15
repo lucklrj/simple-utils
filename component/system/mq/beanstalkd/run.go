@@ -5,7 +5,6 @@ import (
 	_ "github.com/beanstalkd/go-beanstalk"
 	poolUtils "github.com/lucklrj/simple-utils/component/system/pool"
 	"github.com/spf13/cast"
-	"google.golang.org/grpc"
 )
 
 func Run(url string, port uint, workerNamePrefix string) (*poolUtils.Pool, error) {
@@ -30,7 +29,7 @@ func Run(url string, port uint, workerNamePrefix string) (*poolUtils.Pool, error
 
 	}
 	pool.DestroyWorker = func(c interface{}) {
-		c.(*grpc.ClientConn).Close()
+		c.(*beanstalk.Conn).Close()
 	}
 
 	err := pool.Init()
