@@ -81,3 +81,15 @@ func ChangeKey(data interface{}, changeFunc func(string) string) (interface{}, e
 	}
 	return newInstance.Interface(), nil
 }
+func GetKeys(data interface{}) []interface{} {
+	result := make([]interface{}, 0)
+	values := reflect.ValueOf(data)
+	if values.Kind() != reflect.Map {
+		return result
+	}
+	keys := values.MapKeys()
+	for _, k := range keys {
+		result = append(result, k.Interface())
+	}
+	return result
+}
