@@ -55,5 +55,9 @@ func (c *Container) Get(key string, defaultValue interface{}) interface{} {
 }
 
 func (c *Container) Delete(key string) {
+	c.data.Items()
 	c.data.Remove(key)
+}
+func (c *Container) Items() map[string]interface{} {
+	return c.data.Items()
 }
