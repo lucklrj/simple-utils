@@ -99,7 +99,7 @@ func GetKeysFromMap(mapData interface{}) []interface{} {
 	return result
 }
 
-func randChoice(source []interface{}) interface{} {
+func RandChoice(source []interface{}) interface{} {
 	rand.Seed(time.Now().Unix())
 	return source[rand.Intn(len(source))]
 }
