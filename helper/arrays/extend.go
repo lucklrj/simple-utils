@@ -1,7 +1,9 @@
 package arrays
 
 import (
+	"math/rand"
 	"reflect"
+	"time"
 
 	"github.com/spf13/cast"
 )
@@ -95,4 +97,9 @@ func GetKeysFromMap(mapData interface{}) []interface{} {
 		result = append(result, single.Interface())
 	}
 	return result
+}
+
+func randChoice(source []interface{}) interface{} {
+	rand.Seed(time.Now().Unix())
+	return source[rand.Intn(len(source))]
 }
