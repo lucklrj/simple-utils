@@ -1,6 +1,7 @@
 package arrays
 
 import (
+	"errors"
 	"math/rand"
 	"reflect"
 	"time"
@@ -99,7 +100,14 @@ func GetKeysFromMap(mapData interface{}) []interface{} {
 	return result
 }
 
-func RandChoice(source []interface{}) interface{} {
+func RandChoice(source interface{}) (interface{}, error) {
+	sourceValue := reflect.ValueOf(source)
+	kind := reflect.TypeOf(source).Kind()
+	if kind != reflect.Array && kind != reflect.Slice {
+		return nil, errors.New("不支持该类型")
+	}
+	len := sourceValue.Len()
+
 	rand.Seed(time.Now().Unix())
-	return source[rand.Intn(len(source))]
+	return sourceValue.Index(rand.Intn(len)).Interface(), nil
 }
