@@ -7,18 +7,17 @@ import (
 	"reflect"
 )
 
-func ReadAllFromFile(file interface{}) ([]string, error) {
+func ReadAllFromFile(file interface{}) ([]byte, error) {
 	defer func() {
 		recover()
-
 	}()
 
-	result := make([]string, 0)
+	result := make([]byte, 0)
 	var line *bufio.Reader
 	if reflect.TypeOf(file).String() == "string" {
 		fileHandle, err := os.Open(file.(string))
 		if err != nil {
-			return nil, err
+			return result, err
 		}
 		line = bufio.NewReader(fileHandle)
 
@@ -29,12 +28,9 @@ func ReadAllFromFile(file interface{}) ([]string, error) {
 	for {
 		content, _, err := line.ReadLine()
 		if err != nil && err != io.EOF {
-			return make([]string, 0), err
+			return result, err
 		}
-		contentStr := string(content)
-		if contentStr != "" {
-			result = append(result, contentStr)
-		}
+		result = append(result, content...)
 		if err == io.EOF {
 			break
 		}

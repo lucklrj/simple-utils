@@ -7,7 +7,7 @@ import (
 
 func IsFileExist(path string) bool {
 	s, err := os.Stat(path)
-	if err != nil {
+	if err == nil {
 		if os.IsExist(err) && !s.IsDir() {
 			return true
 		} else {
@@ -19,7 +19,7 @@ func IsFileExist(path string) bool {
 
 func IsDirExist(path string) bool {
 	s, err := os.Stat(path)
-	if err != nil {
+	if err == nil {
 		if os.IsExist(err) && s.IsDir() {
 			return true
 		} else {
