@@ -4,12 +4,28 @@ import (
 	"bufio"
 	"io"
 	"os"
+	"reflect"
 )
 
-func ReadAllFromFile(file io.Reader) ([]string, error) {
-	result := make([]string, 0)
+func ReadAllFromFile(file interface{}) ([]string, error) {
+	defer func() {
+		recover()
 
-	line := bufio.NewReader(file)
+	}()
+
+	result := make([]string, 0)
+	var line *bufio.Reader
+	if reflect.TypeOf(file).String() == "string" {
+		fileHandle, err := os.Open(file.(string))
+		if err != nil {
+			return nil, err
+		}
+		line = bufio.NewReader(fileHandle)
+
+	} else {
+		line = bufio.NewReader(file.(io.Reader))
+	}
+
 	for {
 		content, _, err := line.ReadLine()
 		if err != nil && err != io.EOF {
@@ -36,5 +52,5 @@ func WriteFile(filename string, data []byte, perm os.FileMode) error {
 	if err == nil && n < len(data) {
 		return io.ErrShortWrite
 	}
-	return nil
+	return
 }
