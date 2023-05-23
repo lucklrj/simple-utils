@@ -48,5 +48,5 @@ func WriteFile(filename string, data []byte, perm os.FileMode) error {
 	if err == nil && n < len(data) {
 		return io.ErrShortWrite
 	}
-	return
+	return nil
 }

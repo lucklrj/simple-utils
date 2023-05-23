@@ -5,29 +5,22 @@ import (
 	"path/filepath"
 )
 
-func IsFileExist(path string) bool {
-	s, err := os.Stat(path)
-	if err == nil {
-		if os.IsExist(err) && !s.IsDir() {
-			return true
-		} else {
-			return false
-		}
-	}
-	return false
-}
-
 func IsDirExist(path string) bool {
 	s, err := os.Stat(path)
-	if err == nil {
-		if os.IsExist(err) && s.IsDir() {
-			return true
-		} else {
-			return false
-		}
+	if err != nil {
+		return false
 	}
-	return false
+	return s.IsDir()
 }
+func IsFileExist(path string) bool {
+	s, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+	return !s.IsDir()
+
+}
+
 func MakeDirs(path string) error {
 	return os.MkdirAll(path, 0777)
 }
@@ -39,5 +32,4 @@ func GetBinDir() (string, error) {
 	} else {
 		return filepath.Dir(binPath), nil
 	}
-
 }
