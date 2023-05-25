@@ -1,12 +1,13 @@
 package container
 
 import (
+	"sync"
+
 	dateHelper "github.com/lucklrj/simple-utils/helper/date"
-	"github.com/orcaman/concurrent-map/v2"
 )
 
 type Container struct {
-	data cmap.ConcurrentMap[interface{}]
+	data sync.Map
 }
 type singleData struct {
 	ExpireTime uint64
@@ -14,7 +15,7 @@ type singleData struct {
 }
 
 func (c *Container) Init() {
-	c.data = cmap.New[interface{}]()
+	c.data = sync.Map{}
 }
 func (c *Container) Set(key string, value interface{}, expire uint64) {
 	var expireTime uint64 = 0
@@ -25,13 +26,14 @@ func (c *Container) Set(key string, value interface{}, expire uint64) {
 		ExpireTime: expireTime,
 		Data:       value,
 	}
-	c.data.Set(key, data)
+	c.data.Store(key, data)
 }
 func (c *Container) Check(key string) bool {
-	if c.data.Has(key) == false {
+	obj, isExits := c.data.Load(key)
+
+	if isExits == false {
 		return false
 	} else {
-		obj, _ := c.data.Get(key)
 		value := obj.(singleData)
 		if value.ExpireTime > 0 && value.ExpireTime < dateHelper.GetNowUnixTimeStamp() {
 			return false
@@ -41,7 +43,7 @@ func (c *Container) Check(key string) bool {
 	}
 }
 func (c *Container) Get(key string, defaultValue interface{}) interface{} {
-	obj, isExists := c.data.Get(key)
+	obj, isExists := c.data.Load(key)
 	if isExists == false {
 		return defaultValue
 	}
@@ -55,9 +57,13 @@ func (c *Container) Get(key string, defaultValue interface{}) interface{} {
 }
 
 func (c *Container) Delete(key string) {
-	c.data.Items()
-	c.data.Remove(key)
+	c.Delete(key)
 }
-func (c *Container) Items() map[string]interface{} {
-	return c.data.Items()
+func (c *Container) Items() map[any]any {
+	result := map[any]any{}
+	c.data.Range(func(key, value any) bool {
+		result[key] = value
+		return true
+	})
+	return result
 }
