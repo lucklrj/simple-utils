@@ -17,7 +17,7 @@ type singleData struct {
 func (c *Container) Init() {
 	c.data = sync.Map{}
 }
-func (c *Container) Set(key string, value interface{}, expire uint64) {
+func (c *Container) Set(key, value any, expire uint64) {
 	var expireTime uint64 = 0
 	if expire > 0 {
 		expireTime = dateHelper.GetNowUnixTimeStamp() + expire
@@ -28,7 +28,7 @@ func (c *Container) Set(key string, value interface{}, expire uint64) {
 	}
 	c.data.Store(key, data)
 }
-func (c *Container) Check(key string) bool {
+func (c *Container) Check(key any) bool {
 	obj, isExits := c.data.Load(key)
 
 	if isExits == false {
@@ -42,7 +42,7 @@ func (c *Container) Check(key string) bool {
 		}
 	}
 }
-func (c *Container) Get(key string, defaultValue interface{}) interface{} {
+func (c *Container) Get(key, defaultValue any) interface{} {
 	obj, isExists := c.data.Load(key)
 	if isExists == false {
 		return defaultValue
@@ -56,7 +56,7 @@ func (c *Container) Get(key string, defaultValue interface{}) interface{} {
 
 }
 
-func (c *Container) Delete(key string) {
+func (c *Container) Delete(key any) {
 	c.Delete(key)
 }
 func (c *Container) Items() map[any]any {
