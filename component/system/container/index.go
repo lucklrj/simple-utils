@@ -57,7 +57,7 @@ func (c *Container) Get(key, defaultValue any) interface{} {
 }
 
 func (c *Container) Delete(key any) {
-	c.Delete(key)
+	c.data.Delete(key)
 }
 func (c *Container) Items() map[any]any {
 	result := map[any]any{}
