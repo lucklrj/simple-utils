@@ -1,4 +1,4 @@
-package rumtime
+package runtime
 
 import "github.com/zeromicro/go-zero/core/rescue"
 
