@@ -46,6 +46,10 @@ func TimeStamp2Date(time int64) string {
 	return carbon.CreateFromTimestamp(time).Format("Y-m-d", carbon.Shanghai)
 }
 
+func Datetime2TimeStamp(datetime string) int64 {
+	return carbon.Parse(datetime).Timestamp()
+}
+
 func GetNowUnixTimeStamp() uint64 {
 	return uint64(carbon.Now().Timestamp())
 }
