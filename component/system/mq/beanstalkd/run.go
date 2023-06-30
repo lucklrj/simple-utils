@@ -7,13 +7,14 @@ import (
 	"github.com/spf13/cast"
 )
 
-func Run(url string, port uint, workerNamePrefix string) (*poolUtils.Pool, error) {
+func Run(url string, port uint, workerNamePrefix string, maxOpenWorkers, workerMaxLifeTime int) (*poolUtils.Pool,
+	error) {
 	pool := new(poolUtils.Pool)
 	//defer pool.Close()
 
 	//todo 暂时统一参数，稍后可以通过配置来
-	pool.MaxOpenWorkers = 20
-	pool.WorkerMaxLifeTime = 600
+	pool.MaxOpenWorkers = maxOpenWorkers
+	pool.WorkerMaxLifeTime = workerMaxLifeTime
 	pool.WorkerTimeOut = 10
 	pool.WorkerNamePrefix = workerNamePrefix
 	pool.Url = url
