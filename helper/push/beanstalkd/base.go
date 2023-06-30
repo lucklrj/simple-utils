@@ -28,10 +28,11 @@ func Push(pool *poolUtils.Pool, businessID, eventName string, eventData map[stri
 	}
 
 	worker, err := pool.Get()
-	defer pool.Put(worker)
 	if err != nil {
 		return err
 	}
+	defer pool.Put(worker)
+
 	conn := worker.Handler.(*beanstalk.Conn)
 	eventPb := eventPB.EventReq{}
 	eventPb.BusinessID = businessID
