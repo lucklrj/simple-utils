@@ -53,6 +53,9 @@ func Datetime2TimeStamp(datetime string) int64 {
 func GetNowUnixTimeStamp() uint64 {
 	return uint64(carbon.Now().Timestamp())
 }
+func GetNowUnixTimeStampMilli() uint64 {
+	return uint64(carbon.Now().TimestampMilli())
+}
 
 func GetUnixTimeStamp(datetime string, timezone string) uint64 {
 	return uint64(carbon.Parse(datetime, timezone).Timestamp())
