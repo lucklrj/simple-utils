@@ -34,6 +34,9 @@ func (p *Pool) create() {
 	defer func() { p.WorkNum++ }()
 
 	handler := p.CreateWorker()
+	if handler == nil {
+		returnsimple
+	}
 	var leftTime int64 = 0
 	if p.WorkerMaxLifeTime > 0 {
 		leftTime = int64(dateHelper.GetNowUnixTimeStamp()) + int64(p.WorkerMaxLifeTime)
