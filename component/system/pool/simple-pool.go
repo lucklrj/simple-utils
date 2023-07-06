@@ -35,7 +35,7 @@ func (p *Pool) create() {
 
 	handler := p.CreateWorker()
 	if handler == nil {
-		returnsimple
+		return
 	}
 	var leftTime int64 = 0
 	if p.WorkerMaxLifeTime > 0 {
