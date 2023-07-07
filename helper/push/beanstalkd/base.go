@@ -6,12 +6,11 @@ import (
 
 	"github.com/beanstalkd/go-beanstalk"
 	"github.com/golang/protobuf/proto"
-	poolUtils "github.com/lucklrj/simple-utils/component/system/pool"
 	eventPB "github.com/lucklrj/simple-utils/helper/push/beanstalkd/event"
 	"github.com/mitchellh/mapstructure"
 )
 
-func Push(pool *poolUtils.Pool, businessID, eventName string, eventData map[string]interface{},
+func Push(conn *beanstalk.Conn, businessID, eventName string, eventData map[string]interface{},
 	messagePb proto.Message) error {
 
 	eventData["BusinessId"] = businessID
@@ -27,13 +26,6 @@ func Push(pool *poolUtils.Pool, businessID, eventName string, eventData map[stri
 		return err
 	}
 
-	worker, err := pool.Get()
-	if err != nil {
-		return err
-	}
-	defer pool.Put(worker)
-
-	conn := worker.Handler.(*beanstalk.Conn)
 	eventPb := eventPB.EventReq{}
 	eventPb.BusinessID = businessID
 	eventPb.Name = eventName
