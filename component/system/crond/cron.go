@@ -52,10 +52,10 @@ func (c *Crond) Remove(taskName string) error {
 	return nil
 }
 func (c *Crond) Print(interval uint) {
-	fmt.Println("c.Bind", c.Bind)
 	sp := strings.Repeat("*", 30)
 	for {
 		fmt.Println(sp)
+		fmt.Println("当前crond任务：")
 		for jobName, jobInfo := range c.Bind {
 			fmt.Printf("任务名称:%s,job_id:%d,执行频率：%s\n", jobName, jobInfo.JobId, jobInfo.Spec)
 		}
