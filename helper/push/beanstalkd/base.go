@@ -2,6 +2,7 @@ package beanstalkd
 
 import (
 	"encoding/base64"
+	"reflect"
 	"time"
 
 	"github.com/beanstalkd/go-beanstalk"
@@ -13,11 +14,16 @@ import (
 func Push(conn *beanstalk.Conn, businessID, eventName string, eventData map[string]interface{},
 	messagePb proto.Message) error {
 
-	eventData["BusinessId"] = businessID
+	if eventData != nil {
+		eventData["BusinessId"] = businessID
 
-	err := mapstructure.Decode(eventData, messagePb)
-	if err != nil {
-		return err
+		err := mapstructure.Decode(eventData, messagePb)
+		if err != nil {
+			return err
+		}
+	} else {
+		obj := reflect.ValueOf(messagePb).Elem()
+		obj.FieldByName("BusinessId").SetString(businessID)
 	}
 
 	//生成事件主体pb流
