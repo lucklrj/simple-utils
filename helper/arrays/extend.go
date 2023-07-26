@@ -18,7 +18,6 @@ func InArray(obj interface{}, target interface{}, ignoreType bool) bool {
 	case reflect.Slice, reflect.Array:
 		for i := 0; i < targetValue.Len(); i++ {
 			targetKind := targetValue.Index(i).Kind().String()
-			fmt.Println("targetKind", targetKind)
 
 			var result bool
 			if ignoreType { //忽略类型
