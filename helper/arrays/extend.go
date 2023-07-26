@@ -2,20 +2,51 @@ package arrays
 
 import (
 	"errors"
+	"fmt"
 	"math/rand"
 	"reflect"
+	"strings"
 	"time"
 
 	"github.com/spf13/cast"
 )
 
-func InArray(obj interface{}, target interface{}) bool {
+func InArray(obj interface{}, target interface{}, ignoreType bool) bool {
 	targetValue := reflect.ValueOf(target)
+
 	switch reflect.TypeOf(target).Kind() {
 	case reflect.Slice, reflect.Array:
 		for i := 0; i < targetValue.Len(); i++ {
-			if targetValue.Index(i).Interface() == obj {
-				return true
+			targetKind := targetValue.Index(i).Kind().String()
+			fmt.Println("targetKind", targetKind)
+
+			var result bool
+			if ignoreType { //忽略类型
+				switch {
+				case targetKind == "func":
+					result = fmt.Sprintf("%p", targetValue.Index(i).Interface()) == fmt.Sprintf("%p", obj)
+				case targetKind == "bool":
+					result = cast.ToBool(targetValue.Index(i).Interface()) == cast.ToBool(obj)
+				case targetKind == "interface":
+					result = cast.ToString(targetValue.Index(i).Interface()) == cast.ToString(obj)
+				case targetKind == "string":
+					result = cast.ToString(targetValue.Index(i).Interface()) == cast.ToString(obj)
+				case strings.HasPrefix(targetKind, "uint"):
+					result = cast.ToUint(targetValue.Index(i).Interface()) == cast.ToUint(obj)
+				case strings.HasPrefix(targetKind, "int"):
+					result = cast.ToInt(targetValue.Index(i).Interface()) == cast.ToInt(obj)
+				case strings.HasPrefix(targetKind, "float"):
+					result = cast.ToFloat64(targetValue.Index(i).Interface()) == cast.ToFloat64(obj)
+				default: //ptr, slice, struct, array,chan, map,
+					result = reflect.DeepEqual(targetValue.Index(i).Interface(), obj)
+				}
+				if result == true {
+					return true
+				}
+			} else {
+				if targetValue.Index(i).Interface() == obj {
+					return true
+				}
 			}
 		}
 	case reflect.Map:
