@@ -20,14 +20,18 @@ func StructCopyTo(src, dst interface{}) error {
 	for i := 0; i < srcValue.NumField(); i++ {
 		srcField := srcValue.Field(i)
 		dstField := dstElem.FieldByName(srcValue.Type().Field(i).Name)
-		if dstField.Type() == srcField.Type() {
-			dstField.Set(srcField)
-		} else { //手动抓换
-			value, err := changeType(dstField.Type().String(), srcField.Interface())
-			if err == nil {
-				dstField.Set(reflect.ValueOf(value))
+
+		if dstField.IsValid() {
+			if dstField.Type() == srcField.Type() {
+				dstField.Set(srcField)
+			} else { //手动抓换
+				value, err := changeType(dstField.Type().String(), srcField.Interface())
+				if err == nil {
+					dstField.Set(reflect.ValueOf(value))
+				}
 			}
 		}
+
 	}
 	return nil
 }
