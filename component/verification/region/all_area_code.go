@@ -32,7 +32,7 @@ func init() {
 	allAreaArray := gjson.ParseBytes(json).Array()
 	for _, line := range allAreaArray {
 		code = uint(line.Get("code").Uint())
-		allArea[code] = SingleArea{
+		allAreaCode[code] = SingleArea{
 			EnName:    line.Get("en_name").String(),
 			CnName:    line.Get("cn_name").String(),
 			Code:      code,
