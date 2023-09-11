@@ -1,0 +1,1400 @@
+[
+  {
+    "short_name" : "AF",
+    "code" : "93",
+    "cn_name" : "阿富汗",
+    "en_name" : "Afghanistan"
+  },
+  {
+    "short_name" : "US",
+    "code" : "1907",
+    "cn_name" : "阿拉斯加",
+    "en_name" : "Alaska"
+  },
+  {
+    "short_name" : "AL",
+    "code" : "355",
+    "cn_name" : "阿尔巴尼亚",
+    "en_name" : "Albania"
+  },
+  {
+    "short_name" : "DZ",
+    "code" : "213",
+    "cn_name" : "阿尔及利亚",
+    "en_name" : "Algeria"
+  },
+  {
+    "short_name" : "AS",
+    "code" : "1684",
+    "cn_name" : "美属萨摩亚",
+    "en_name" : "American Samoa"
+  },
+  {
+    "short_name" : "AD",
+    "code" : "376",
+    "cn_name" : "安道尔",
+    "en_name" : "Andorra"
+  },
+  {
+    "short_name" : "AO",
+    "code" : "244",
+    "cn_name" : "安哥拉",
+    "en_name" : "Angola"
+  },
+  {
+    "short_name" : "AI",
+    "code" : "1264",
+    "cn_name" : "安圭拉",
+    "en_name" : "Anguilla"
+  },
+  {
+    "short_name" : "AG",
+    "code" : "1268",
+    "cn_name" : "安提瓜和巴布达",
+    "en_name" : "Antigua and Barbuda"
+  },
+  {
+    "short_name" : "AR",
+    "code" : "54",
+    "cn_name" : "阿根廷",
+    "en_name" : "Argentina"
+  },
+  {
+    "short_name" : "AM",
+    "code" : "374",
+    "cn_name" : "亚美尼亚",
+    "en_name" : "Armenia"
+  },
+  {
+    "short_name" : "AW",
+    "code" : "297",
+    "cn_name" : "阿鲁巴",
+    "en_name" : "Aruba"
+  },
+  {
+    "short_name" : "SH",
+    "code" : "247",
+    "cn_name" : "阿森松",
+    "en_name" : "Ascension"
+  },
+  {
+    "short_name" : "AU",
+    "code" : "61",
+    "cn_name" : "澳大利亚",
+    "en_name" : "Australia"
+  },
+  {
+    "short_name" : "AT",
+    "code" : "43",
+    "cn_name" : "奥地利",
+    "en_name" : "Austria"
+  },
+  {
+    "short_name" : "AZ",
+    "code" : "994",
+    "cn_name" : "阿塞拜疆",
+    "en_name" : "Azerbaijan"
+  },
+  {
+    "short_name" : "BS",
+    "code" : "1242",
+    "cn_name" : "巴哈马",
+    "en_name" : "Bahamas"
+  },
+  {
+    "short_name" : "BH",
+    "code" : "973",
+    "cn_name" : "巴林",
+    "en_name" : "Bahrain"
+  },
+  {
+    "short_name" : "BD",
+    "code" : "880",
+    "cn_name" : "孟加拉国",
+    "en_name" : "Bangladesh"
+  },
+  {
+    "short_name" : "BB",
+    "code" : "1246",
+    "cn_name" : "巴巴多斯",
+    "en_name" : "Barbados"
+  },
+  {
+    "short_name" : "BY",
+    "code" : "375",
+    "cn_name" : "白俄罗斯",
+    "en_name" : "Belarus"
+  },
+  {
+    "short_name" : "BE",
+    "code" : "32",
+    "cn_name" : "比利时",
+    "en_name" : "Belgium"
+  },
+  {
+    "short_name" : "BZ",
+    "code" : "501",
+    "cn_name" : "伯利兹",
+    "en_name" : "Belize"
+  },
+  {
+    "short_name" : "BJ",
+    "code" : "229",
+    "cn_name" : "贝宁",
+    "en_name" : "Benin"
+  },
+  {
+    "short_name" : "BM",
+    "code" : "1441",
+    "cn_name" : "百慕大群岛",
+    "en_name" : "Bermuda"
+  },
+  {
+    "short_name" : "BT",
+    "code" : "975",
+    "cn_name" : "不丹",
+    "en_name" : "Bhutan"
+  },
+  {
+    "short_name" : "BO",
+    "code" : "591",
+    "cn_name" : "玻利维亚",
+    "en_name" : "Bolivia"
+  },
+  {
+    "short_name" : "BA",
+    "code" : "387",
+    "cn_name" : "波斯尼亚和黑塞哥维那",
+    "en_name" : "Bosnia and Herzegovina"
+  },
+  {
+    "short_name" : "BW",
+    "code" : "267",
+    "cn_name" : "博茨瓦纳",
+    "en_name" : "Botswana"
+  },
+  {
+    "short_name" : "BR",
+    "code" : "55",
+    "cn_name" : "巴西",
+    "en_name" : "Brazil"
+  },
+  {
+    "short_name" : "BN",
+    "code" : "673",
+    "cn_name" : "文莱",
+    "en_name" : "Brunei"
+  },
+  {
+    "short_name" : "BG",
+    "code" : "359",
+    "cn_name" : "保加利亚",
+    "en_name" : "Bulgaria"
+  },
+  {
+    "short_name" : "BF",
+    "code" : "226",
+    "cn_name" : "布基纳法索",
+    "en_name" : "Burkina Faso"
+  },
+  {
+    "short_name" : "BI",
+    "code" : "257",
+    "cn_name" : "布隆迪",
+    "en_name" : "Burundi"
+  },
+  {
+    "short_name" : "KH",
+    "code" : "855",
+    "cn_name" : "柬埔寨",
+    "en_name" : "Cambodia"
+  },
+  {
+    "short_name" : "CM",
+    "code" : "237",
+    "cn_name" : "喀麦隆",
+    "en_name" : "Cameroon"
+  },
+  {
+    "short_name" : "CA",
+    "code" : "1",
+    "cn_name" : "加拿大",
+    "en_name" : "Canada"
+  },
+  {
+    "short_name" : "ES",
+    "code" : "34",
+    "cn_name" : "加那利群岛",
+    "en_name" : "Islas Canarias"
+  },
+  {
+    "short_name" : "CV",
+    "code" : "238",
+    "cn_name" : "开普",
+    "en_name" : "Cape Verde"
+  },
+  {
+    "short_name" : "KY",
+    "code" : "1345",
+    "cn_name" : "开曼群岛",
+    "en_name" : "Cayman Islands"
+  },
+  {
+    "short_name" : "CF",
+    "code" : "236",
+    "cn_name" : "中非共和国",
+    "en_name" : "Central African Republic"
+  },
+  {
+    "short_name" : "TD",
+    "code" : "235",
+    "cn_name" : "乍得",
+    "en_name" : "Chad"
+  },
+  {
+    "short_name" : "CN",
+    "code" : "86",
+    "cn_name" : "中国",
+    "en_name" : "China"
+  },
+  {
+    "short_name" : "CL",
+    "code" : "56",
+    "cn_name" : "智利",
+    "en_name" : "Chile"
+  },
+  {
+    "short_name" : "CX",
+    "code" : "0061 9164",
+    "cn_name" : "圣诞岛",
+    "en_name" : "Christmas Island"
+  },
+  {
+    "short_name" : "CC",
+    "code" : "0061 9162",
+    "cn_name" : "科科斯岛",
+    "en_name" : "Cocos Island"
+  },
+  {
+    "short_name" : "CO",
+    "code" : "57",
+    "cn_name" : "哥伦比亚",
+    "en_name" : "Colombia"
+  },
+  {
+    "short_name" : "DO",
+    "code" : "1809",
+    "cn_name" : "多米尼加共和国",
+    "en_name" : "Dominican Republic"
+  },
+  {
+    "short_name" : "KM",
+    "code" : "269",
+    "cn_name" : "科摩罗",
+    "en_name" : "Comoros"
+  },
+  {
+    "short_name" : "CG",
+    "code" : "242",
+    "cn_name" : "刚果共和国",
+    "en_name" : "Republic Of The Congo"
+  },
+  {
+    "short_name" : "CK",
+    "code" : "682",
+    "cn_name" : "库克群岛",
+    "en_name" : "Cook Islands"
+  },
+  {
+    "short_name" : "CR",
+    "code" : "506",
+    "cn_name" : "哥斯达黎加",
+    "en_name" : "Costa Rica"
+  },
+  {
+    "short_name" : "HR",
+    "code" : "385",
+    "cn_name" : "克罗地亚",
+    "en_name" : "Croatia"
+  },
+  {
+    "short_name" : "CU",
+    "code" : "53",
+    "cn_name" : "古巴",
+    "en_name" : "Cuba"
+  },
+  {
+    "short_name" : "CW",
+    "code" : "599",
+    "cn_name" : "库拉索",
+    "en_name" : "Curacao"
+  },
+  {
+    "short_name" : "CY",
+    "code" : "357",
+    "cn_name" : "塞浦路斯",
+    "en_name" : "Cyprus"
+  },
+  {
+    "short_name" : "CZ",
+    "code" : "420",
+    "cn_name" : "捷克",
+    "en_name" : "Czech"
+  },
+  {
+    "short_name" : "DK",
+    "code" : "45",
+    "cn_name" : "丹麦",
+    "en_name" : "Denmark"
+  },
+  {
+    "short_name" : "DJ",
+    "code" : "253",
+    "cn_name" : "吉布提",
+    "en_name" : "Djibouti"
+  },
+  {
+    "short_name" : "DM",
+    "code" : "1767",
+    "cn_name" : "多米尼加",
+    "en_name" : "Dominica"
+  },
+  {
+    "short_name" : "DO",
+    "code" : "1809",
+    "cn_name" : "多米尼加共和国",
+    "en_name" : "Dominican Republic"
+  },
+  {
+    "short_name" : "EC",
+    "code" : "593",
+    "cn_name" : "厄瓜多尔",
+    "en_name" : "Ecuador"
+  },
+  {
+    "short_name" : "EG",
+    "code" : "20",
+    "cn_name" : "埃及",
+    "en_name" : "Egypt"
+  },
+  {
+    "short_name" : "SV",
+    "code" : "503",
+    "cn_name" : "萨尔瓦多",
+    "en_name" : "El Salvador"
+  },
+  {
+    "short_name" : "GQ",
+    "code" : "240",
+    "cn_name" : "赤道几内亚",
+    "en_name" : "Equatorial Guinea"
+  },
+  {
+    "short_name" : "ER",
+    "code" : "291",
+    "cn_name" : "厄立特里亚",
+    "en_name" : "Eritrea"
+  },
+  {
+    "short_name" : "EE",
+    "code" : "372",
+    "cn_name" : "爱沙尼亚",
+    "en_name" : "Estonia"
+  },
+  {
+    "short_name" : "ET",
+    "code" : "251",
+    "cn_name" : "埃塞俄比亚",
+    "en_name" : "Ethiopia"
+  },
+  {
+    "short_name" : "FK",
+    "code" : "500",
+    "cn_name" : "福克兰群岛",
+    "en_name" : "Falkland Islands"
+  },
+  {
+    "short_name" : "FO",
+    "code" : "298",
+    "cn_name" : "法罗群岛",
+    "en_name" : "Faroe Islands"
+  },
+  {
+    "short_name" : "FJ",
+    "code" : "679",
+    "cn_name" : "斐济",
+    "en_name" : "Fiji"
+  },
+  {
+    "short_name" : "FI",
+    "code" : "358",
+    "cn_name" : "芬兰",
+    "en_name" : "Finland"
+  },
+  {
+    "short_name" : "FR",
+    "code" : "33",
+    "cn_name" : "法国",
+    "en_name" : "France"
+  },
+  {
+    "short_name" : "GF",
+    "code" : "594",
+    "cn_name" : "法属圭亚那",
+    "en_name" : "French Guiana"
+  },
+  {
+    "short_name" : "PF",
+    "code" : "689",
+    "cn_name" : "法属波利尼西亚",
+    "en_name" : "French Polynesia"
+  },
+  {
+    "short_name" : "GA",
+    "code" : "241",
+    "cn_name" : "加蓬",
+    "en_name" : "Gabon"
+  },
+  {
+    "short_name" : "GM",
+    "code" : "220",
+    "cn_name" : "冈比亚",
+    "en_name" : "Gambia"
+  },
+  {
+    "short_name" : "GE",
+    "code" : "995",
+    "cn_name" : "格鲁吉亚",
+    "en_name" : "Georgia"
+  },
+  {
+    "short_name" : "DE",
+    "code" : "49",
+    "cn_name" : "德国",
+    "en_name" : "Germany"
+  },
+  {
+    "short_name" : "GH",
+    "code" : "233",
+    "cn_name" : "加纳",
+    "en_name" : "Ghana"
+  },
+  {
+    "short_name" : "GI",
+    "code" : "350",
+    "cn_name" : "直布罗陀",
+    "en_name" : "Gibraltar"
+  },
+  {
+    "short_name" : "GR",
+    "code" : "30",
+    "cn_name" : "希腊",
+    "en_name" : "Greece"
+  },
+  {
+    "short_name" : "GL",
+    "code" : "299",
+    "cn_name" : "格陵兰岛",
+    "en_name" : "Greenland"
+  },
+  {
+    "short_name" : "GD",
+    "code" : "1473",
+    "cn_name" : "格林纳达",
+    "en_name" : "Grenada"
+  },
+  {
+    "short_name" : "GP",
+    "code" : "590",
+    "cn_name" : "瓜德罗普岛",
+    "en_name" : "Guadeloupe"
+  },
+  {
+    "short_name" : "GU",
+    "code" : "1671",
+    "cn_name" : "关岛",
+    "en_name" : "Guam"
+  },
+  {
+    "short_name" : "GT",
+    "code" : "502",
+    "cn_name" : "瓜地马拉",
+    "en_name" : "Guatemala"
+  },
+  {
+    "short_name" : "GN",
+    "code" : "224",
+    "cn_name" : "几内亚",
+    "en_name" : "Guinea"
+  },
+  {
+    "short_name" : "GW",
+    "code" : "245",
+    "cn_name" : "几内亚比绍共和国",
+    "en_name" : "Guinea-Bissau"
+  },
+  {
+    "short_name" : "GY",
+    "code" : "592",
+    "cn_name" : "圭亚那",
+    "en_name" : "Guyana"
+  },
+  {
+    "short_name" : "HT",
+    "code" : "509",
+    "cn_name" : "海地",
+    "en_name" : "Haiti"
+  },
+  {
+    "short_name" : "US",
+    "code" : "1808",
+    "cn_name" : "夏威夷",
+    "en_name" : "Hawaii"
+  },
+  {
+    "short_name" : "HN",
+    "code" : "504",
+    "cn_name" : "洪都拉斯",
+    "en_name" : "Honduras"
+  },
+  {
+    "short_name" : "HK",
+    "code" : "852",
+    "cn_name" : "中国香港",
+    "en_name" : "Hong Kong"
+  },
+  {
+    "short_name" : "HU",
+    "code" : "36",
+    "cn_name" : "匈牙利",
+    "en_name" : "Hungary"
+  },
+  {
+    "short_name" : "IS",
+    "code" : "354",
+    "cn_name" : "冰岛",
+    "en_name" : "Iceland"
+  },
+  {
+    "short_name" : "IN",
+    "code" : "91",
+    "cn_name" : "印度",
+    "en_name" : "India"
+  },
+  {
+    "short_name" : "ID",
+    "code" : "62",
+    "cn_name" : "印度尼西亚",
+    "en_name" : "Indonesia"
+  },
+  {
+    "short_name" : "IR",
+    "code" : "98",
+    "cn_name" : "伊朗",
+    "en_name" : "Iran"
+  },
+  {
+    "short_name" : "IQ",
+    "code" : "964",
+    "cn_name" : "伊拉克",
+    "en_name" : "Iraq"
+  },
+  {
+    "short_name" : "IE",
+    "code" : "353",
+    "cn_name" : "爱尔兰",
+    "en_name" : "Ireland"
+  },
+  {
+    "short_name" : "IL",
+    "code" : "972",
+    "cn_name" : "以色列",
+    "en_name" : "Israel"
+  },
+  {
+    "short_name" : "IT",
+    "code" : "39",
+    "cn_name" : "意大利",
+    "en_name" : "Italy"
+  },
+  {
+    "short_name" : "CI",
+    "code" : "225",
+    "cn_name" : "象牙海岸",
+    "en_name" : "Ivory Coast"
+  },
+  {
+    "short_name" : "JM",
+    "code" : "1876",
+    "cn_name" : "牙买加",
+    "en_name" : "Jamaica"
+  },
+  {
+    "short_name" : "JP",
+    "code" : "81",
+    "cn_name" : "日本",
+    "en_name" : "Japan"
+  },
+  {
+    "short_name" : "JO",
+    "code" : "962",
+    "cn_name" : "约旦",
+    "en_name" : "Jordan"
+  },
+  {
+    "short_name" : "KZ",
+    "code" : "7",
+    "cn_name" : "哈萨克斯坦",
+    "en_name" : "Kazakhstan"
+  },
+  {
+    "short_name" : "KE",
+    "code" : "254",
+    "cn_name" : "肯尼亚",
+    "en_name" : "Kenya"
+  },
+  {
+    "short_name" : "KI",
+    "code" : "686",
+    "cn_name" : "基里巴斯",
+    "en_name" : "Kiribati"
+  },
+  {
+    "short_name" : "KP",
+    "code" : "85",
+    "cn_name" : "朝鲜",
+    "en_name" : "Korea Democratic Rep."
+  },
+  {
+    "short_name" : "KR",
+    "code" : "82",
+    "cn_name" : "韩国",
+    "en_name" : "South Korea"
+  },
+  {
+    "short_name" : "KW",
+    "code" : "965",
+    "cn_name" : "科威特",
+    "en_name" : "Kuwait"
+  },
+  {
+    "short_name" : "KG",
+    "code" : "996",
+    "cn_name" : "吉尔吉斯斯坦",
+    "en_name" : "Kyrgyzstan"
+  },
+  {
+    "short_name" : "LA",
+    "code" : "856",
+    "cn_name" : "老挝",
+    "en_name" : "Laos"
+  },
+  {
+    "short_name" : "LV",
+    "code" : "371",
+    "cn_name" : "拉脱维亚",
+    "en_name" : "Latvia"
+  },
+  {
+    "short_name" : "LB",
+    "code" : "961",
+    "cn_name" : "黎巴嫩",
+    "en_name" : "Lebanon"
+  },
+  {
+    "short_name" : "LS",
+    "code" : "266",
+    "cn_name" : "莱索托",
+    "en_name" : "Lesotho"
+  },
+  {
+    "short_name" : "LR",
+    "code" : "231",
+    "cn_name" : "利比里亚",
+    "en_name" : "Liberia"
+  },
+  {
+    "short_name" : "LY",
+    "code" : "218",
+    "cn_name" : "利比亚",
+    "en_name" : "Libya"
+  },
+  {
+    "short_name" : "LI",
+    "code" : "423",
+    "cn_name" : "列支敦士登",
+    "en_name" : "Liechtenstein"
+  },
+  {
+    "short_name" : "LT",
+    "code" : "370",
+    "cn_name" : "立陶宛",
+    "en_name" : "Lithuania"
+  },
+  {
+    "short_name" : "LU",
+    "code" : "352",
+    "cn_name" : "卢森堡",
+    "en_name" : "Luxembourg"
+  },
+  {
+    "short_name" : "MO",
+    "code" : "853",
+    "cn_name" : "中国澳门",
+    "en_name" : "Macau"
+  },
+  {
+    "short_name" : "MK",
+    "code" : "389",
+    "cn_name" : "马其顿",
+    "en_name" : "Macedonia"
+  },
+  {
+    "short_name" : "MG",
+    "code" : "261",
+    "cn_name" : "马达加斯加",
+    "en_name" : "Madagascar"
+  },
+  {
+    "short_name" : "MW",
+    "code" : "265",
+    "cn_name" : "马拉维",
+    "en_name" : "Malawi"
+  },
+  {
+    "short_name" : "MY",
+    "code" : "60",
+    "cn_name" : "马来西亚",
+    "en_name" : "Malaysia"
+  },
+  {
+    "short_name" : "MV",
+    "code" : "960",
+    "cn_name" : "马尔代夫",
+    "en_name" : "Maldives"
+  },
+  {
+    "short_name" : "ML",
+    "code" : "223",
+    "cn_name" : "马里",
+    "en_name" : "Mali"
+  },
+  {
+    "short_name" : "MT",
+    "code" : "356",
+    "cn_name" : "马耳他",
+    "en_name" : "Malta"
+  },
+  {
+    "short_name" : "MH",
+    "code" : "692",
+    "cn_name" : "马绍尔群岛",
+    "en_name" : "Marshall Islands"
+  },
+  {
+    "short_name" : "MQ",
+    "code" : "596",
+    "cn_name" : "马提尼克",
+    "en_name" : "Martinique"
+  },
+  {
+    "short_name" : "MR",
+    "code" : "222",
+    "cn_name" : "毛里塔尼亚",
+    "en_name" : "Mauritania"
+  },
+  {
+    "short_name" : "MU",
+    "code" : "230",
+    "cn_name" : "毛里求斯",
+    "en_name" : "Mauritius"
+  },
+  {
+    "short_name" : "YT",
+    "code" : "269",
+    "cn_name" : "马约特",
+    "en_name" : "Mayotte"
+  },
+  {
+    "short_name" : "MX",
+    "code" : "52",
+    "cn_name" : "墨西哥",
+    "en_name" : "Mexico"
+  },
+  {
+    "short_name" : "FM",
+    "code" : "691",
+    "cn_name" : "密克罗尼西亚",
+    "en_name" : "Micronesia"
+  },
+  {
+    "short_name" : "MD",
+    "code" : "373",
+    "cn_name" : "摩尔多瓦",
+    "en_name" : "Moldova"
+  },
+  {
+    "short_name" : "MC",
+    "code" : "377",
+    "cn_name" : "摩纳哥",
+    "en_name" : "Monaco"
+  },
+  {
+    "short_name" : "MN",
+    "code" : "976",
+    "cn_name" : "蒙古",
+    "en_name" : "Mongolia"
+  },
+  {
+    "short_name" : "ME",
+    "code" : "382",
+    "cn_name" : "黑山",
+    "en_name" : "Montenegro"
+  },
+  {
+    "short_name" : "MS",
+    "code" : "1664",
+    "cn_name" : "蒙特塞拉特岛",
+    "en_name" : "Montserrat"
+  },
+  {
+    "short_name" : "MA",
+    "code" : "212",
+    "cn_name" : "摩洛哥",
+    "en_name" : "Morocco"
+  },
+  {
+    "short_name" : "MZ",
+    "code" : "258",
+    "cn_name" : "莫桑比克",
+    "en_name" : "Mozambique"
+  },
+  {
+    "short_name" : "MM",
+    "code" : "95",
+    "cn_name" : "缅甸",
+    "en_name" : "Myanmar"
+  },
+  {
+    "short_name" : "NA",
+    "code" : "264",
+    "cn_name" : "纳米比亚",
+    "en_name" : "Namibia"
+  },
+  {
+    "short_name" : "NR",
+    "code" : "674",
+    "cn_name" : "拿鲁岛",
+    "en_name" : "Nauru"
+  },
+  {
+    "short_name" : "NP",
+    "code" : "977",
+    "cn_name" : "尼泊尔",
+    "en_name" : "Nepal"
+  },
+  {
+    "short_name" : "NL",
+    "code" : "31",
+    "cn_name" : "荷兰",
+    "en_name" : "Netherlands"
+  },
+  {
+    "short_name" : "NC",
+    "code" : "687",
+    "cn_name" : "新喀里多尼亚",
+    "en_name" : "New Caledonia"
+  },
+  {
+    "short_name" : "NZ",
+    "code" : "64",
+    "cn_name" : "新西兰",
+    "en_name" : "New Zealand"
+  },
+  {
+    "short_name" : "NI",
+    "code" : "505",
+    "cn_name" : "尼加拉瓜",
+    "en_name" : "Nicaragua"
+  },
+  {
+    "short_name" : "NE",
+    "code" : "227",
+    "cn_name" : "尼日尔",
+    "en_name" : "Niger"
+  },
+  {
+    "short_name" : "NG",
+    "code" : "234",
+    "cn_name" : "尼日利亚",
+    "en_name" : "Nigeria"
+  },
+  {
+    "short_name" : "NU",
+    "code" : "683",
+    "cn_name" : "纽埃岛(新)",
+    "en_name" : "Niue Island"
+  },
+  {
+    "short_name" : "NF",
+    "code" : "6723",
+    "cn_name" : "诺福克岛(澳)",
+    "en_name" : "Norfolk Island"
+  },
+  {
+    "short_name" : "NO",
+    "code" : "47",
+    "cn_name" : "挪威",
+    "en_name" : "Norway"
+  },
+  {
+    "short_name" : "OM",
+    "code" : "968",
+    "cn_name" : "阿曼",
+    "en_name" : "Oman"
+  },
+  {
+    "short_name" : "PW",
+    "code" : "680",
+    "cn_name" : "帕劳",
+    "en_name" : "Palau"
+  },
+  {
+    "short_name" : "PA",
+    "code" : "507",
+    "cn_name" : "巴拿马",
+    "en_name" : "Panama"
+  },
+  {
+    "short_name" : "PG",
+    "code" : "675",
+    "cn_name" : "巴布亚新几内亚",
+    "en_name" : "Papua New Guinea"
+  },
+  {
+    "short_name" : "PY",
+    "code" : "595",
+    "cn_name" : "巴拉圭",
+    "en_name" : "Paraguay"
+  },
+  {
+    "short_name" : "PE",
+    "code" : "51",
+    "cn_name" : "秘鲁",
+    "en_name" : "Peru"
+  },
+  {
+    "short_name" : "PH",
+    "code" : "63",
+    "cn_name" : "菲律宾",
+    "en_name" : "Philippines"
+  },
+  {
+    "short_name" : "PL",
+    "code" : "48",
+    "cn_name" : "波兰",
+    "en_name" : "Poland"
+  },
+  {
+    "short_name" : "PT",
+    "code" : "351",
+    "cn_name" : "葡萄牙",
+    "en_name" : "Portugal"
+  },
+  {
+    "short_name" : "PK",
+    "code" : "92",
+    "cn_name" : "巴基斯坦",
+    "en_name" : "Pakistan"
+  },
+  {
+    "short_name" : "PR",
+    "code" : "1787",
+    "cn_name" : "波多黎各",
+    "en_name" : "Puerto Rico"
+  },
+  {
+    "short_name" : "QA",
+    "code" : "974",
+    "cn_name" : "卡塔尔",
+    "en_name" : "Qatar"
+  },
+  {
+    "short_name" : "RE",
+    "code" : "262",
+    "cn_name" : "留尼汪",
+    "en_name" : "Réunion Island"
+  },
+  {
+    "short_name" : "RO",
+    "code" : "40",
+    "cn_name" : "罗马尼亚",
+    "en_name" : "Romania"
+  },
+  {
+    "short_name" : "RU",
+    "code" : "7",
+    "cn_name" : "俄罗斯",
+    "en_name" : "Russia"
+  },
+  {
+    "short_name" : "RW",
+    "code" : "250",
+    "cn_name" : "卢旺达",
+    "en_name" : "Rwanda"
+  },
+  {
+    "short_name" : "AS",
+    "code" : "684",
+    "cn_name" : "东萨摩亚(美)",
+    "en_name" : "Samoa,Eastern"
+  },
+  {
+    "short_name" : "WS",
+    "code" : "685",
+    "cn_name" : "萨摩亚",
+    "en_name" : "Samoa"
+  },
+  {
+    "short_name" : "SM",
+    "code" : "378",
+    "cn_name" : "圣马力诺",
+    "en_name" : "San Marino"
+  },
+  {
+    "short_name" : "PM",
+    "code" : "508",
+    "cn_name" : "圣彼埃尔和密克隆岛",
+    "en_name" : "Saint Pierre and Miquelon"
+  },
+  {
+    "short_name" : "ST",
+    "code" : "239",
+    "cn_name" : "圣多美和普林西比",
+    "en_name" : "Sao Tome and Principe"
+  },
+  {
+    "short_name" : "SA",
+    "code" : "966",
+    "cn_name" : "沙特阿拉伯",
+    "en_name" : "Saudi Arabia"
+  },
+  {
+    "short_name" : "SN",
+    "code" : "221",
+    "cn_name" : "塞内加尔",
+    "en_name" : "Senegal"
+  },
+  {
+    "short_name" : "RS",
+    "code" : "381",
+    "cn_name" : "塞尔维亚",
+    "en_name" : "Serbia"
+  },
+  {
+    "short_name" : "SC",
+    "code" : "248",
+    "cn_name" : "塞舌尔",
+    "en_name" : "Seychelles"
+  },
+  {
+    "short_name" : "SL",
+    "code" : "232",
+    "cn_name" : "塞拉利昂",
+    "en_name" : "Sierra Leone"
+  },
+  {
+    "short_name" : "SG",
+    "code" : "65",
+    "cn_name" : "新加坡",
+    "en_name" : "Singapore"
+  },
+  {
+    "short_name" : "SX",
+    "code" : "1721",
+    "cn_name" : "圣马丁岛（荷兰部分）",
+    "en_name" : "Saint Maarten (Dutch Part)"
+  },
+  {
+    "short_name" : "SK",
+    "code" : "421",
+    "cn_name" : "斯洛伐克",
+    "en_name" : "Slovakia"
+  },
+  {
+    "short_name" : "SI",
+    "code" : "386",
+    "cn_name" : "斯洛文尼亚",
+    "en_name" : "Slovenia"
+  },
+  {
+    "short_name" : "SB",
+    "code" : "677",
+    "cn_name" : "所罗门群岛",
+    "en_name" : "Solomon Islands"
+  },
+  {
+    "short_name" : "SO",
+    "code" : "252",
+    "cn_name" : "索马里",
+    "en_name" : "Somalia"
+  },
+  {
+    "short_name" : "ZA",
+    "code" : "27",
+    "cn_name" : "南非",
+    "en_name" : "South Africa"
+  },
+  {
+    "short_name" : "ES",
+    "code" : "34",
+    "cn_name" : "西班牙",
+    "en_name" : "Spain"
+  },
+  {
+    "short_name" : "LK",
+    "code" : "94",
+    "cn_name" : "斯里兰卡",
+    "en_name" : "Sri Lanka"
+  },
+  {
+    "short_name" : "SH",
+    "code" : "290",
+    "cn_name" : "圣赫勒拿",
+    "en_name" : "St.Helena"
+  },
+  {
+    "short_name" : "LC",
+    "code" : "1758",
+    "cn_name" : "圣露西亚",
+    "en_name" : "Saint Lucia"
+  },
+  {
+    "short_name" : "VC",
+    "code" : "1784",
+    "cn_name" : "圣文森特和格林纳丁斯",
+    "en_name" : "Saint Vincent and The Grenadines"
+  },
+  {
+    "short_name" : "SD",
+    "code" : "249",
+    "cn_name" : "苏丹",
+    "en_name" : "Sudan"
+  },
+  {
+    "short_name" : "SR",
+    "code" : "597",
+    "cn_name" : "苏里南",
+    "en_name" : "Suriname"
+  },
+  {
+    "short_name" : "SZ",
+    "code" : "268",
+    "cn_name" : "斯威士兰",
+    "en_name" : "Swaziland"
+  },
+  {
+    "short_name" : "SE",
+    "code" : "46",
+    "cn_name" : "瑞典",
+    "en_name" : "Sweden"
+  },
+  {
+    "short_name" : "CH",
+    "code" : "41",
+    "cn_name" : "瑞士",
+    "en_name" : "Switzerland"
+  },
+  {
+    "short_name" : "SY",
+    "code" : "963",
+    "cn_name" : "叙利亚",
+    "en_name" : "Syria"
+  },
+  {
+    "short_name" : "TW",
+    "code" : "886",
+    "cn_name" : "中国台湾",
+    "en_name" : "Taiwan"
+  },
+  {
+    "short_name" : "TJ",
+    "code" : "992",
+    "cn_name" : "塔吉克斯坦",
+    "en_name" : "Tajikistan"
+  },
+  {
+    "short_name" : "TZ",
+    "code" : "255",
+    "cn_name" : "坦桑尼亚",
+    "en_name" : "Tanzania"
+  },
+  {
+    "short_name" : "TH",
+    "code" : "66",
+    "cn_name" : "泰国",
+    "en_name" : "Thailand"
+  },
+  {
+    "short_name" : "TL",
+    "code" : "670",
+    "cn_name" : "东帝汶",
+    "en_name" : "Timor-Leste"
+  },
+  {
+    "short_name" : "AE",
+    "code" : "971",
+    "cn_name" : "阿拉伯联合酋长国",
+    "en_name" : "United Arab Emirates"
+  },
+  {
+    "short_name" : "TG",
+    "code" : "228",
+    "cn_name" : "多哥",
+    "en_name" : "Togo"
+  },
+  {
+    "short_name" : "TK",
+    "code" : "690",
+    "cn_name" : "托克劳群岛(新)",
+    "en_name" : "Tokelau Is."
+  },
+  {
+    "short_name" : "TO",
+    "code" : "676",
+    "cn_name" : "汤加",
+    "en_name" : "Tonga"
+  },
+  {
+    "short_name" : "TT",
+    "code" : "1868",
+    "cn_name" : "特立尼达和多巴哥",
+    "en_name" : "Trinidad and Tobago"
+  },
+  {
+    "short_name" : "TN",
+    "code" : "216",
+    "cn_name" : "突尼斯",
+    "en_name" : "Tunisia"
+  },
+  {
+    "short_name" : "TR",
+    "code" : "90",
+    "cn_name" : "土耳其",
+    "en_name" : "Turkey"
+  },
+  {
+    "short_name" : "TM",
+    "code" : "993",
+    "cn_name" : "土库曼斯坦",
+    "en_name" : "Turkmenistan"
+  },
+  {
+    "short_name" : "TC",
+    "code" : "1649",
+    "cn_name" : "特克斯和凯科斯群岛",
+    "en_name" : "Turks and Caicos Islands"
+  },
+  {
+    "short_name" : "TK",
+    "code" : "688",
+    "cn_name" : "图瓦卢",
+    "en_name" : "Tuvalu"
+  },
+  {
+    "short_name" : "US",
+    "code" : "1",
+    "cn_name" : "美国",
+    "en_name" : "United States"
+  },
+  {
+    "short_name" : "UG",
+    "code" : "256",
+    "cn_name" : "乌干达",
+    "en_name" : "Uganda"
+  },
+  {
+    "short_name" : "UA",
+    "code" : "380",
+    "cn_name" : "乌克兰",
+    "en_name" : "Ukraine"
+  },
+  {
+    "short_name" : "GB",
+    "code" : "44",
+    "cn_name" : "英国",
+    "en_name" : "United Kingdom"
+  },
+  {
+    "short_name" : "UY",
+    "code" : "598",
+    "cn_name" : "乌拉圭",
+    "en_name" : "Uruguay"
+  },
+  {
+    "short_name" : "UZ",
+    "code" : "998",
+    "cn_name" : "乌兹别克斯坦",
+    "en_name" : "Uzbekistan"
+  },
+  {
+    "short_name" : "VU",
+    "code" : "678",
+    "cn_name" : "瓦努阿图",
+    "en_name" : "Vanuatu"
+  },
+  {
+    "short_name" : "VE",
+    "code" : "58",
+    "cn_name" : "委内瑞拉",
+    "en_name" : "Venezuela"
+  },
+  {
+    "short_name" : "VN",
+    "code" : "84",
+    "cn_name" : "越南",
+    "en_name" : "Vietnam"
+  },
+  {
+    "short_name" : "VG",
+    "code" : "1340",
+    "cn_name" : "英属处女群岛",
+    "en_name" : "Virgin Islands, British"
+  },
+  {
+    "short_name" : "VI",
+    "code" : "1284",
+    "cn_name" : "美属维尔京群岛",
+    "en_name" : "Virgin Islands, US"
+  },
+  {
+    "short_name" : "UM",
+    "code" : "1808",
+    "cn_name" : "威克岛(美)",
+    "en_name" : "Wake I."
+  },
+  {
+    "short_name" : "YE",
+    "code" : "967",
+    "cn_name" : "也门",
+    "en_name" : "Yemen"
+  },
+  {
+    "short_name" : "ZM",
+    "code" : "260",
+    "cn_name" : "赞比亚",
+    "en_name" : "Zambia"
+  },
+  {
+    "short_name" : "TZ",
+    "code" : "259",
+    "cn_name" : "桑给巴尔",
+    "en_name" : "Zanzibar"
+  },
+  {
+    "short_name" : "ZW",
+    "code" : "263",
+    "cn_name" : "津巴布韦",
+    "en_name" : "Zimbabwe"
+  }
+]
