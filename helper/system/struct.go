@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cast"
 )
 
-func StructCopyTo(src, dst interface{}) error {
+func StructCopyTo(src, dst interface{}, ignoreZeroValue bool) error {
 	srcValue := reflect.ValueOf(src)
 	if srcValue.Kind() != reflect.Struct {
 		return errors.New("源数据格式不对，必须是struct")
@@ -23,11 +23,24 @@ func StructCopyTo(src, dst interface{}) error {
 
 		if dstField.IsValid() {
 			if dstField.Type() == srcField.Type() {
-				dstField.Set(srcField)
-			} else { //手动抓换
+				if ignoreZeroValue == true {
+					dstField.Set(srcField)
+				} else {
+					if reflect.ValueOf(srcField.Interface()).IsZero() == false {
+						dstField.Set(srcField)
+					}
+				}
+			} else {
 				value, err := changeType(dstField.Type().String(), srcField.Interface())
 				if err == nil {
-					dstField.Set(reflect.ValueOf(value))
+					tmp := reflect.ValueOf(value)
+					if ignoreZeroValue == true {
+						dstField.Set(tmp)
+					} else {
+						if reflect.ValueOf(tmp.Interface()).IsZero() == false {
+							dstField.Set(tmp)
+						}
+					}
 				}
 			}
 		}
