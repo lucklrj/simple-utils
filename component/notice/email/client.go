@@ -1,13 +1,13 @@
-package helper
+package email
 
 import (
-	_ "gopkg.in/mail.v2"
+	sdk "gopkg.in/mail.v2"
 )
 
 var Client *MailClient
 
 type MailClient struct {
-	handel *mail.Dialer
+	handel *sdk.Dialer
 	name   string
 }
 
@@ -23,14 +23,14 @@ type Info struct {
 	Attach  string
 }
 
-func (c *MailClient) Run(name, passwd, host string, port int) {
-	c.handel = mail.NewDialer(host, port, name, passwd)
-	c.handel.StartTLSPolicy = mail.MandatoryStartTLS
+func (c *MailClient) Init(name, passwd, host string, port int) {
+	c.handel = sdk.NewDialer(host, port, name, passwd)
+	c.handel.StartTLSPolicy = sdk.MandatoryStartTLS
 	c.name = name
 }
 
 func (c *MailClient) Send(info Info) error {
-	m := mail.NewMessage()
+	m := sdk.NewMessage()
 	m.SetHeader("From", c.name)
 	m.SetHeader("To", info.To...)
 
