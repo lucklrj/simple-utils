@@ -3,6 +3,7 @@ package system
 import (
 	"errors"
 	"reflect"
+	"unicode"
 
 	"github.com/spf13/cast"
 )
@@ -19,6 +20,9 @@ func StructCopyTo(src, dst interface{}, ignoreZeroValue bool) error {
 	dstElem := dstValue.Elem()
 	for i := 0; i < srcValue.NumField(); i++ {
 		srcField := srcValue.Field(i)
+		if !unicode.IsUpper(rune(srcValue.Type().Field(i).Name[0])) {
+			continue
+		}
 		dstField := dstElem.FieldByName(srcValue.Type().Field(i).Name)
 
 		if dstField.IsValid() {
