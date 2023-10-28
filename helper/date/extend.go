@@ -6,7 +6,7 @@ import (
 )
 
 func GetTodayDate() string {
-	return carbon.Now().ToDateString(carbon.Shanghai)
+	return carbon.Now().ToDateString()
 }
 func GetTodayUnixTime() int64 {
 	return carbon.Parse(carbon.Now().ToDateString()).Timestamp()
@@ -39,11 +39,11 @@ func GetDailyHourArea(format bool) []string {
 }
 
 func TimeStamp2Datetime(time int64) string {
-	return carbon.CreateFromTimestamp(time).Format("Y-m-d H:i:s", carbon.Shanghai)
+	return carbon.CreateFromTimestamp(time).Format("Y-m-d H:i:s")
 }
 
 func TimeStamp2Date(time int64) string {
-	return carbon.CreateFromTimestamp(time).Format("Y-m-d", carbon.Shanghai)
+	return carbon.CreateFromTimestamp(time).Format("Y-m-d")
 }
 
 func Datetime2TimeStamp(datetime string) int64 {
@@ -64,6 +64,6 @@ func GetUnixTimeStamp(datetime string, timezone string) uint64 {
 // TimeStamp2DateAndHour 拆分一个时间戳，返回日期，小时
 func TimeStamp2DateAndHour(time uint64) (uint, uint) {
 	obj := carbon.CreateFromTimestamp(int64(time))
-	day := obj.Format("Y-m-d", carbon.Shanghai)
-	return uint(carbon.Parse(day, carbon.Shanghai).Timestamp()), cast.ToUint(obj.Format("H", carbon.Shanghai))
+	day := obj.Format("Y-m-d")
+	return uint(carbon.Parse(day).Timestamp()), cast.ToUint(obj.Format("H"))
 }
