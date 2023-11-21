@@ -38,13 +38,13 @@ func (s *Store) Verify(id, answer string, clear bool) bool {
 	return answer == s.Get(id, clear)
 }
 
-func MakeBase64CaptchaClient() *base64Captcha.Captcha {
+func MakeBase64CaptchaClient(length, height, width, dotCount int, maxSkew float64) *base64Captcha.Captcha {
 	driver := base64Captcha.DriverDigit{}
-	driver.Length = 6
-	driver.Height = 60
-	driver.Width = 200
-	driver.MaxSkew = 0.5
-	driver.DotCount = 100
+	driver.Length = length
+	driver.Height = height
+	driver.Width = width
+	driver.MaxSkew = maxSkew
+	driver.DotCount = dotCount
 
 	store := Store{}
 
