@@ -1,6 +1,8 @@
 package date
 
 import (
+	"fmt"
+
 	"github.com/golang-module/carbon"
 	"github.com/spf13/cast"
 )
@@ -66,4 +68,12 @@ func TimeStamp2DateAndHour(time uint64) (uint, uint) {
 	obj := carbon.CreateFromTimestamp(int64(time))
 	day := obj.Format("Y-m-d")
 	return uint(carbon.Parse(day).Timestamp()), cast.ToUint(obj.Format("H"))
+}
+
+func GetNowFromTimestampMicro() string {
+	nowTimestampMicro := carbon.Now().TimestampMicro()
+
+	nowSecond := nowTimestampMicro / 1000000
+	return fmt.Sprintf("%s.%d", TimeStamp2Datetime(nowSecond), nowTimestampMicro-nowSecond*1000000)
+
 }
