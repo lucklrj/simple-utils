@@ -113,6 +113,11 @@ func ParseExcel(path string) (map[int]SingleTitle, []map[string]string, error) {
 			continue
 		}
 		body := map[string]string{}
+		//根据title初始化一次
+		for _, one := range allTitle {
+			body[one.Title] = ""
+		}
+
 		for index, content := range row {
 			body[allTitle[index].Title] = content
 		}
