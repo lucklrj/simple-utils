@@ -138,6 +138,6 @@ func RandChoice(source interface{}) (interface{}, error) {
 	}
 	len := sourceValue.Len()
 
-	rand.Seed(time.Now().Unix())
+	rand.Seed(time.Now().UnixNano())
 	return sourceValue.Index(rand.Intn(len)).Interface(), nil
 }
