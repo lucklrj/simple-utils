@@ -141,3 +141,9 @@ func RandChoice(source interface{}) (interface{}, error) {
 	rand.Seed(time.Now().UnixNano())
 	return sourceValue.Index(rand.Intn(sourceLen)).Interface(), nil
 }
+
+func Shuffle[T any](data []T) []T {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(data), func(i, j int) { data[i], data[j] = data[j], data[i] })
+	return data
+}
