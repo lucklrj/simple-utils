@@ -136,8 +136,8 @@ func RandChoice(source interface{}) (interface{}, error) {
 	if kind != reflect.Array && kind != reflect.Slice {
 		return nil, errors.New("不支持该类型")
 	}
-	len := sourceValue.Len()
+	sourceLen := sourceValue.Len()
 
 	rand.Seed(time.Now().UnixNano())
-	return sourceValue.Index(rand.Intn(len)).Interface(), nil
+	return sourceValue.Index(rand.Intn(sourceLen)).Interface(), nil
 }
