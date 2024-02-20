@@ -1,4 +1,4 @@
-package quenue
+package queue
 
 import (
 	"container/list"
