@@ -147,3 +147,46 @@ func Shuffle[T any](data []T) []T {
 	rand.Shuffle(len(data), func(i, j int) { data[i], data[j] = data[j], data[i] })
 	return data
 }
+
+func RandChoiceBatch(source interface{}, num uint) []interface{} {
+	result := make([]interface{}, 0)
+
+	sourceValue := reflect.ValueOf(source)
+	kind := reflect.TypeOf(source).Kind()
+	if kind != reflect.Array && kind != reflect.Slice {
+		return result
+	}
+	sourceLength := sourceValue.Len()
+
+	// 创建一个切片用于存储原始数组的副本
+	shuffledData := make([]any, sourceLength)
+	for i := 0; i < sourceLength; i++ {
+		shuffledData[i] = sourceValue.Index(i).Interface()
+	}
+
+	rand.Seed(time.Now().UnixNano())
+
+	var i uint
+	// 循环获取随机值
+	for i = 0; i < num; i++ {
+		// 如果切片为空，结束循环
+		if len(shuffledData) == 0 {
+			return result
+		}
+
+		// 生成随机索引
+		randomIndex := rand.Intn(len(shuffledData))
+
+		// 获取随机值
+		randomValue := shuffledData[randomIndex]
+
+		// 将获取的值添加到结果切片
+		result = append(result, randomValue)
+
+		// 从切片中移除已选择的值
+		shuffledData = append(shuffledData[:randomIndex], shuffledData[randomIndex+1:]...)
+	}
+
+	return result
+
+}
