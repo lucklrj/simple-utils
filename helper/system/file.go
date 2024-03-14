@@ -30,10 +30,10 @@ func ReadAllFromFile(file interface{}) ([][]byte, error) {
 		if err != nil && err != io.EOF {
 			return result, err
 		}
-
-		result = append(result, content)
 		if err == io.EOF {
 			break
+		} else {
+			result = append(result, content)
 		}
 	}
 	return result, nil
