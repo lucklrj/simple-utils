@@ -7,12 +7,12 @@ import (
 	"reflect"
 )
 
-func ReadAllFromFile(file interface{}) ([]byte, error) {
+func ReadAllFromFile(file interface{}) ([][]byte, error) {
 	defer func() {
 		recover()
 	}()
 
-	result := make([]byte, 0)
+	var result [][]byte
 	var line *bufio.Reader
 	if reflect.TypeOf(file).String() == "string" {
 		fileHandle, err := os.Open(file.(string))
@@ -30,7 +30,8 @@ func ReadAllFromFile(file interface{}) ([]byte, error) {
 		if err != nil && err != io.EOF {
 			return result, err
 		}
-		result = append(result, content...)
+
+		result = append(result, content)
 		if err == io.EOF {
 			break
 		}
