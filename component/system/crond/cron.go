@@ -51,6 +51,14 @@ func (c *Crond) Remove(taskName string) error {
 	delete(c.Bind, taskName)
 	return nil
 }
+
+func (c *Crond) RemoveAll() {
+	for taskName, jobInfo := range c.Bind {
+		c.Timer.Remove(jobInfo.JobId)
+		delete(c.Bind, taskName)
+	}
+}
+
 func (c *Crond) Print(interval uint) {
 	sp := strings.Repeat("*", 30)
 	for {
