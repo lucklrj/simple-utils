@@ -12,6 +12,12 @@ func CreateRandNum(digit uint) string {
 	return fmt.Sprintf("%0"+strconv.Itoa(int(digit))+"v", rand.New(rand.NewSource(time.Now().UnixNano())).Int31n(int32(math.Pow(10, float64(digit)))))
 }
 func GetRandFromArea(min, max int) int {
+	if min > max {
+		min, max = max, min
+	}
+	if min == max {
+		return min
+	}
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(max-min) + min
 }
