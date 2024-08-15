@@ -2,8 +2,9 @@ package runtime
 
 import (
 	"runtime/debug"
+	"strings"
 
-	"github.com/lucklrj/simple-utils/component/system/log"
+	"github.com/fatih/color"
 )
 
 func GoSafe(fn func()) {
@@ -20,7 +21,9 @@ func Recover(cleanups ...func()) {
 	}
 
 	if p := recover(); p != nil {
-		log.Logger.Error(p)
-		log.Logger.Error(string(debug.Stack()))
+		sp := strings.Repeat("*", 100)
+		color.Red(sp)
+		color.Red("panic:%v", p)
+		color.Red(string(debug.Stack()))
 	}
 }
