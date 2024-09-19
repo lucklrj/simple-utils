@@ -14,7 +14,6 @@ var envPath *string
 
 func init() {
 	envPath = flag.String("env_path", "./.env", "配置文件地址")
-	flag.Parse()
 }
 func Load(callback func(map[string]string)) error {
 	if systemHelper.IsFileExist(*envPath) == false {
