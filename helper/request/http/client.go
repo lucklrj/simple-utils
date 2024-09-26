@@ -12,17 +12,20 @@ type httpClient struct {
 	handler *httpclient.HttpClient
 }
 
-func (c *httpClient) Get(url string, httpProxyUrl string, params ...interface{}) (string, error) {
+func (c *httpClient) Get(url string, httpProxyUrl string, headers map[string]string, params ...interface{}) (string, error) {
 	var result *httpclient.Response
 	var err error
 
 	//根据设置代理
-	if httpProxyUrl == "" {
-		result, err = c.handler.Begin().Get(url, params...)
-	} else {
-		result, err = c.handler.Begin().WithOption(httpclient.OPT_PROXY, httpProxyUrl).Get(url, params...)
+	obj := c.handler.Begin()
+	if httpProxyUrl != "" {
+		obj = obj.WithOption(httpclient.OPT_PROXY, httpProxyUrl)
+	}
+	if headers != nil {
+		obj = obj.WithHeaders(headers)
 	}
 
+	result, err = obj.Get(url, params...)
 	if err != nil {
 		return "", err
 	} else {
