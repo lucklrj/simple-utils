@@ -65,5 +65,18 @@ func (q *SecureQueue) Pop() interface{} {
 	} else {
 		return nil
 	}
+}
+
+func (q *SecureQueue) Shift() interface{} {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+	if q.size > 0 {
+		tmp := q.data.Front()
+		q.data.Remove(tmp)
+		q.size--
+		return tmp
+	} else {
+		return nil
+	}
 
 }
