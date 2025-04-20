@@ -33,7 +33,8 @@ func (c *httpClient) Get(url string, httpProxyUrl string, headers map[string]str
 		return response, nil
 	}
 }
-func (c *httpClient) Post(url string, headers, postData map[string]string, cookies []*http.Cookie) (body string,
+func (c *httpClient) Post(url string, headers map[string]string, postData map[string]interface{},
+	cookies []*http.Cookie) (body string,
 	errs error) {
 	hc := c.handler
 	res, err := hc.Begin().WithHeaders(headers).WithCookie(cookies...).Post(url, postData)
