@@ -8,7 +8,7 @@ import (
 
 func Encode(content []byte, publicKey []byte) (cryptText string, err error) {
 
-	contentEncrypt, err := goEncrypt.RsaEncrypt(content, publicKey)
+	contentEncrypt, err := goEncrypt.RsaEncryptToBase64(content, publicKey)
 	if err != nil {
 		return "", err
 	} else {
@@ -20,6 +20,6 @@ func Decode(content string, privateKey []byte) (cryptText string, err error) {
 	if err != nil {
 		return "", err
 	}
-	contentDecode, err := goEncrypt.RsaDecrypt(contentByte, privateKey)
+	contentDecode, err := goEncrypt.RsaDecryptByBase64(contentByte, privateKey)
 	return string(contentDecode), err
 }
